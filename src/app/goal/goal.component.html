@@ -1,0 +1,12 @@
+
+<div>
+  <h2>My goals</h2>
+  <hr>
+  <ul>
+    <!-- ngFor is used to loop a list of items -->
+    <li *ngFor="let goal of goals">
+      {{ goal.name }}-{{ goal.description}}
+      <app-goaldetail [goal]='goal'></app-goaldetail>
+    </li>
+  </ul>
+</div>
