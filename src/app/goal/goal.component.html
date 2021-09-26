@@ -4,9 +4,11 @@
   <hr>
   <ul>
     <!-- ngFor is used to loop a list of items -->
-    <li *ngFor="let goal of goals">
+    <li *ngFor="let goal of goals; let i = index;">
       {{ goal.name }}-{{ goal.description}}
-      <app-goaldetail [goal]='goal'></app-goaldetail>
+      <button (click)="toggleDetails(i)">Toggle details</button>
+      <app-goaldetail *ngIf="goal.showdescription" [goal]='goal'></app-goaldetail>
     </li>
   </ul>
+  <p *ngIf="goals.length>5">Your goals are too many.</p>
 </div>

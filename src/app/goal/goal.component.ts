@@ -17,7 +17,9 @@ export class GoalComponent implements OnInit {
     new Goal(5, 'solve js codewars', 'practicing to solve a code challenge averyday with codewars and hackeranks'),
     new Goal(6, 'check meetups calendar', 'looking for meetups, updating the calender and updating'),
   ]
-
+   toggleDetails(index:number){
+     this.goals[index].showdescription= !this.goals[index].showdescription
+   }
 
   constructor() { }
 
