@@ -18,7 +18,14 @@ export class GoalComponent implements OnInit {
     new Goal(6, 'check meetups calendar', 'looking for meetups, updating the calender and updating'),
   ]
    toggleDetails(index:number){
-     this.goals[index].showdescription= !this.goals[index].showdescription
+     this.goals[index].showdescription= !this.goals[index].showdescription;
+    //  button.style.display="none";  
+   }
+   completegoal(iscomplete:boolean,index:number){
+     if(iscomplete){
+       this.goals.splice(index,1);
+     }
+
    }
 
   constructor() { }

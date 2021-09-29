@@ -1,13 +1,12 @@
-
 <div>
   <h2>My goals</h2>
   <hr>
   <ul>
     <!-- ngFor is used to loop a list of items -->
     <li *ngFor="let goal of goals; let i = index;">
-      {{ goal.name }}-{{ goal.description}}
+      <h3 appStrikethrough> {{ goal.name }}</h3>
       <button (click)="toggleDetails(i)">Toggle details</button>
-      <app-goaldetail *ngIf="goal.showdescription" [goal]='goal'></app-goaldetail>
+      <app-goaldetail *ngIf="goal.showdescription" [goal]='goal' (iscomplete)=completegoal($event,i)></app-goaldetail>
     </li>
   </ul>
   <p *ngIf="goals.length>5">Your goals are too many.</p>
